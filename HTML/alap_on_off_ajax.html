@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ESP Console Homepage</title>
+
+    <script type="text/javascript">
+        // szerver IP lekérdezése 
+        var server_ip = location.host;
+
+        // ha nincs szerver IP akkor offline módban fut tovább beállított szerver címmel
+        var ServerURL = "http://192.168.2.111/inline";
+
+        // ajax üzenet küldés
+        // ulr ->  esp szerver címe és az üzenet    http://192.168.2.111/inline?h=5&e=1&r=4
+        // id_tag  -> html oldalon a p tag ahova az esp válasza kerül
+        function sendToESP(url, id_tag) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            var timeout = setTimeout(
+                function() {
+                    xhr.abort();
+                    xhr.status = 599;
+                    document.getElementById(id_tag).innerHTML = "Nem jött válasz. nincs skapcsolat";
+                    xhr.responseText = "OFF Offline";
+                }, 5000);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState != 4) {
+                    return;
+                }
+                clearTimeout(timeout);
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    if (this.responseText != null) {
+                        // esp felől érkező üzenet feldolgozása
+                        document.getElementById(id_tag).innerHTML = this.responseText;
+                    }
+                }
+            }
+            xhr.send(null);
+        }
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <p id="id_on_off"> ----- </p>
+    <p>
+        <BR> szerver felé küldött üzenet: <input id="id_ajax_send" type="text" value="" size="50" style="text-align: center; " />
+        <button onclick="sendToESP(document.getElementById('id_ajax_send').value, 'id_esp_response')">Ajax küldés</button>
+    </p>
+    <p id="id_esp_response"> esp válasz</p>
+
+    <script type="text/javascript">
+        // online offline ulr beállítása
+        if (server_ip) {
+            // html oldal szerverről
+            ServerURL = "http://" + server_ip + "/inline";
+            document.getElementById('id_on_off').innerHTML = "HTML online";
+        } else {
+            // html oldal offline
+            document.getElementById('id_on_off').innerHTML = "HTML offline";
+        }
+        document.getElementById('id_ajax_send').value = ServerURL;
+    </script>
+</body>
+
+</html>
