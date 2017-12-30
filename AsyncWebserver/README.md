@@ -19,3 +19,6 @@ Következő két kód a heap méretét adja vissza, ha a html oldal esp-n van t�
 		request->send(response);
 
 	});
+
+
+![Sikeres adatfogadás](https://raw.githubusercontent.com/SanyiSay/ESP8266/master/AsyncWebserver/ok.JPG)
