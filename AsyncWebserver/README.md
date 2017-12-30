@@ -5,8 +5,9 @@ Aszinkron webszerver minta.
 
 [Offline HTML oldalak használata](https://github.com/SanyiSay/ESP8266/tree/master/AsyncWebserver#htm-f%C3%A1jlok-tesztel%C3%A9se)
 
-[ESP AsyncFSBrowser (egy könnyed html alapú fájlkezelő) ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)
+[ESP AsyncFSBrowser] (egy könnyed html alapú fájlkezelő) (https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)
 
+[ESP fájlrendszeréből is használja a webszerverünk a feltöltött oldalakat) ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)
 
 
 
