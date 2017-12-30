@@ -21,4 +21,8 @@ Következő két kód a heap méretét adja vissza, ha a html oldal esp-n van t�
 	});
 
 
+Ha chrome ban használjuk a Ctrl+Shift+i  billentyű kombinációt akkor a megnyíló fejlesztői ablakban láthatjuk hol volt a hiba.
+
+sikeres adatfogadáskos ezt látjuk
+---------------------------------
 ![Sikeres adatfogadás](https://raw.githubusercontent.com/SanyiSay/ESP8266/master/AsyncWebserver/ok.JPG)
