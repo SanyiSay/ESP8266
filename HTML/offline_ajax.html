@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ESP Console Homepage</title>
+
+    <script type="text/javascript">
+        // ESP szerver elérési útvonala
+        var ServerURL = "http://192.168.2.111/oldal?adat=1&dadat2=2&adat3=3";
+
+        // ajax üzenet küldés
+        function sendToESP(url, id_tag) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            var timeout = setTimeout(
+                function() {
+                    xhr.abort();
+                    xhr.status = 599;
+                    document.getElementById(id_tag).innerHTML = "Nem jött válasz. nincs skapcsolat";
+                    xhr.responseText = "OFF Offline";
+                }, 5000);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState != 4) {
+                    return;
+                }
+                clearTimeout(timeout);
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    if (this.responseText != null) {
+                        // esp felől érkező üzenet feldolgozása
+                        document.getElementById(id_tag).innerHTML = this.responseText;
+                    }
+                }
+            }
+            xhr.send(null);
+        }
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <p>
+        <BR> szerver felé küldött üzenet: <input id="id_ajax_send" type="text" value="" size="50" style="text-align: center; " />
+        <button onclick="sendToESP(document.getElementById('id_ajax_send').value, 'id_esp_response')">Ajax küldés</button>
+    </p>
+    <p id="id_esp_response"> esp válasz itt lesz</p>
+
+    <script type="text/javascript">
+        // előre beállított esp url bekerül az input mezőbe
+        document.getElementById('id_ajax_send').value = ServerURL;
+    </script>
+</body>
+
+</html>
