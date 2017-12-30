@@ -45,7 +45,25 @@ Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a
 ![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_hiba.JPG?raw=true)
 
 ----------
+----------
 
-### ESP AsyncFSBrowser
+# ESP AsyncFSBrowser
+
+**Meghívása:**
+ /edit  esp oldalai között az edit oldalon találjuk.
+ 
+Sokat nem lehet róla írni az oldal magáért beszél. 
+Fájl fel letöltés az esp SPIFFS fájlrendszerébe.
+
+Ami talán ehhez a részhez tartozik hogy ha a webszerveren beállítjuk, hogy keressen az esp SPIFFS fájlrendszerén is akkor elég csak ide feltenni a html fájljainkat és már használhatjuk is. Ezt ezzel a sorral tehetjük meg. Itt még azt állítjuk be hogy ha az esp ip címét írjuk csak a böngészőbe akkor melyik fájl legyen az amit alapértelmezetten bead. (setDefaultFile("index.html"))
+
+    server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.html");
+
+Ezek után már könnyedén fel tudjuk tenni az offline megszerkesztett oldalainkat az esp-re.
+
+
+
+
+ 
 
 
