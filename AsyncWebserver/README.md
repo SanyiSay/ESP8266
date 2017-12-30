@@ -25,8 +25,12 @@ Ha chrome ban használjuk a Ctrl+Shift+i  billentyű kombinációt akkor a megny
 
 sikeres adatfogadáskor ezt látjuk
 ---------------------------------
+Response Headers résznél látjuk az esp felől érkező adatokat és szépen ott van az (Access-Control-Allow-Origin:*) 
+
 ![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_ok.JPG?raw=true)
 
 sikertelen adatfogadáskor ezt látjuk
----------------------------------
+--------------------------------- 
+Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a problémára.
+
 ![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_hiba.JPG?raw=true)
