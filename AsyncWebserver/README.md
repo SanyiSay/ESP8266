@@ -1,6 +1,10 @@
 # AsyncWebserver1.ino
 Aszinkron webszerver minta.
 
+
+
+
+
 htm fájlok tesztelése 
 -----------------------------
 
