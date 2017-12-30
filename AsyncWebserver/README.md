@@ -5,7 +5,7 @@ Aszinkron webszerver minta.
 
 [Offline HTML oldalak használata](https://github.com/SanyiSay/ESP8266/tree/master/AsyncWebserver#htm-f%C3%A1jlok-tesztel%C3%A9se)
 
-[ESP AsyncFSBrowser] (egy könnyed html alapú fájlkezelő) (https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)
+[ESP AsyncFSBrowser ] (https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)(egy könnyed html alapú fájlkezelő)
 
 [ESP fájlrendszeréből is használja a webszerverünk a feltöltött oldalakat) ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)
 
@@ -56,9 +56,13 @@ Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a
 Sokat nem lehet róla írni az oldal magáért beszél. 
 Fájl fel letöltés az esp SPIFFS fájlrendszerébe.
 
-Ami talán ehhez a részhez tartozik hogy ha a webszerveren beállítjuk, hogy keressen az esp SPIFFS fájlrendszerén is akkor elég csak ide feltenni a html fájljainkat és már használhatjuk is. Ezt ezzel a sorral tehetjük meg. Itt még azt állítjuk be hogy ha az esp ip címét írjuk csak a böngészőbe akkor melyik fájl legyen az amit alapértelmezetten bead. (setDefaultFile("index.html"))
+Ami talán ehhez a részhez tartozik:
+**ESP SPIFFS fájlrendszerén tárolt html fájlokat is használja a webszerverünk**
+Webszerveren beállítjuk, hogy keressen az esp fájlrendszerén is oldalakat így elég csak ide feltenni a html (és egyéb js, css, stb) fájljainkat és már használhatjuk is. 
 
     server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.html");
+
+Ezt ezzel a sorral tehetjük meg. Itt még azt állítjuk be hogy ha az esp ip címét írjuk csak a böngészőbe akkor melyik fájl legyen az amit alapértelmezetten használ. (setDefaultFile("index.html"))
 
 Ezek után már könnyedén fel tudjuk tenni az offline megszerkesztett oldalainkat az esp-re.
 
