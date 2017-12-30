@@ -28,14 +28,14 @@ Következő két kód a heap méretét adja vissza, ha a html oldal esp-n van t�
 
 Ha chrome ban használjuk a Ctrl+Shift+i  billentyű kombinációt akkor a megnyíló fejlesztői ablakban láthatjuk hol volt a hiba.
 
-sikeres adatfogadáskor ezt látjuk
----------------------------------
+### sikeres adatfogadáskor ezt látjuk
+
 Response Headers résznél látjuk az esp felől érkező adatokat és szépen ott van az (Access-Control-Allow-Origin:*) és a válasz is megérkezett az oldalra. 
 
 ![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_ok.JPG?raw=true)
 
-sikertelen adatfogadáskor ezt látjuk
---------------------------------- 
+### sikertelen adatfogadáskor ezt látjuk
+
 Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a problémára, és természetesen így az adat sem jött meg az esp-től.
 
 ![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_hiba.JPG?raw=true)
