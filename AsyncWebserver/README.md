@@ -1,7 +1,10 @@
 # AsyncWebserver1.ino
 Aszinkron webszerver minta.
 
+[ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
 
+[Offline HTML oldalak használata](https://github.com/SanyiSay/ESP8266/tree/master/AsyncWebserver#htm-f%C3%A1jlok-tesztel%C3%A9se)
+[ESP AsyncFSBrowser (egy könnyed html alapú fájlkezelő) ]()
 
 
 
@@ -39,3 +42,9 @@ Response Headers résznél látjuk az esp felől érkező adatokat és szépen o
 Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a problémára, és természetesen így az adat sem jött meg az esp-től.
 
 ![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_hiba.JPG?raw=true)
+
+----------
+
+### ESP AsyncFSBrowser
+
+
