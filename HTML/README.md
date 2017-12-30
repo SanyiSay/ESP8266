@@ -7,6 +7,6 @@ Egyszerű offline html oldal.  ESP felé küld AJAX-al adatot, és a választ ki
 ----------
 
 # alap_on_off_ajax.html
-Ez a fájl futhat esp-n tárolva (online) vagy a kliensen (pc, mobil, stb) tárolva (offline). Felismeri honnan indították el. 
+Ez a fájl futhat esp-n tárolva (online) vagy a kliensen (pc, mobil, stb) tárolva (offline). Felismeri  honnan indították el. 
 
 ----------
