@@ -1,3 +1,5 @@
+Offline módon megnyitott html oldal nem minden esetben kapja meg az esp válaszát. ESP webszerverének a válasz fejlécébe be kell illeszteni a ("Access-Control-Allow-Origin", "*") sort. Biztonsági okokból letiltja a választ a böngésző. pld  chrome.   Erre példa és az online/offline használatra az [AsyncWebserver1](https://github.com/SanyiSay/ESP8266/tree/master/AsyncWebserver) mintánában található.
+
 # offline_ajax.html
 Egyszerű offline html oldal.  ESP felé küld AJAX-al adatot, és a választ kiírja az oldalra.
 >**Offline módban az esp elérési útvonalának formája:**
