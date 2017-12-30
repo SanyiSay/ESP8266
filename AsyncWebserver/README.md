@@ -23,6 +23,10 @@ Következő két kód a heap méretét adja vissza, ha a html oldal esp-n van t�
 
 Ha chrome ban használjuk a Ctrl+Shift+i  billentyű kombinációt akkor a megnyíló fejlesztői ablakban láthatjuk hol volt a hiba.
 
-sikeres adatfogadáskos ezt látjuk
+sikeres adatfogadáskor ezt látjuk
+---------------------------------
+![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_ok.JPG?raw=true)
+
+sikertelen adatfogadáskor ezt látjuk
 ---------------------------------
 ![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_hiba.JPG?raw=true)
