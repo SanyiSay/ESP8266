@@ -60,6 +60,7 @@ Fájl fel letöltés az esp SPIFFS fájlrendszerébe.
 Ami talán ehhez a részhez tartozik:
 
 **ESP SPIFFS fájlrendszerén tárolt html fájlokat is használja a webszerverünk**
+
 Webszerveren beállítjuk, hogy keressen az esp fájlrendszerén is oldalakat így elég csak ide feltenni a html (és egyéb js, css, stb) fájljainkat és már használhatjuk is. 
 
     server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.html");
