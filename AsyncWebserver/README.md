@@ -19,7 +19,7 @@ alap_on_off_ajax.html
 offline_ajax.html
 
 **ESP Arduino webszerver minta hozzá:**
-AsyncWebserver1.ino
+[AsyncWebserver1.ino](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/AsyncWebserver1.ino)
 
 A következő két kódrészlet az AsyncWebserver1.ino mintából stármazikés a heap méretét adja vissza, ha a html oldal esp-n van tárolva onnan fut (online) akkor mindkét példa működik és megkapja a böngésző (kliens) a heap méretét. Viszont ha a HTML oldal (offline) akkor csak a második a ( /_heap ) oldal meghívására kapjuk meg a heap méretét mert ahhoz van hozzácsatolva a (Access-Control-Allow-Origin:*) fejléc.
 
@@ -58,8 +58,9 @@ Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a
 
 Része az AsyncWebServer-nek
 
+
 **ESP Arduino webszerver minta hozzá:**
-AsyncWebserver1.ino
+[AsyncWebserver1.ino](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/AsyncWebserver1.ino)
 
 **Meghívása:**
  xxx.xxx.xxx.xxx/edit  
@@ -87,7 +88,7 @@ Ezek után már könnyedén fel tudjuk tenni az offline megszerkesztett oldalain
 ----------
 # OTA kódfeltöltés html oldalról.
 **ESP Arduino webszerver minta hozzá:**
-AsyncWebserver1.ino
+[AsyncWebserver1.ino](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/AsyncWebserver1.ino)
 
 Arduino OTA-hoz hasonlóan wifin keresztül tölti fel a kódot az esp-re csak itt nem az arduino szerkesztőn hanem egy html oldalon keresztül tudjuk kiválasztani, és feltölteni a szükséges .bin fájlt. Így a frissítéshez nem kell a szerkesztő elég bármi amin egy böngésző fut.
  
