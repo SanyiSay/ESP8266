@@ -5,7 +5,7 @@
 
 - [Offline HTML oldalak tesztelése](https://github.com/SanyiSay/ESP8266/tree/master/AsyncWebserver#htm-f%C3%A1jlok-tesztel%C3%A9se)  
 
-- [ESP AsyncFSBrowser ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)  (egy könnyed html alapú fájlkezelő)
+- [ESP AsyncFSBrowser ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)  (egy könnyed html alapú fájlkezelő amivel az esp fájlrendszerét elérjük böngészőn keresztül)
 
 - [ESP fájlrendszeréből hogy éri el a webszerverünk a feltöltött oldalakat) ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)
 
