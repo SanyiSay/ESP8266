@@ -1,3 +1,6 @@
+// két könyvtárt kell hozzá plusszba letöteni
+// https://github.com/me-no-dev/ESPAsyncWebServer
+// https://github.com/me-no-dev/ESPAsyncTCP
 
 #include <ESP8266WiFi.h>
 #include <FS.h>
