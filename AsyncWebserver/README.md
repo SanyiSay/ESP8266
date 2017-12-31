@@ -54,7 +54,7 @@ Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a
  /edit  esp oldalai között az edit oldalon találjuk.
  
 Sokat nem lehet róla írni az oldal magáért beszél. 
-Fájl fel letöltés az esp SPIFFS fájlrendszerébe.
+Fájl fel, letöltés, szerkesztés, létrehozás az esp SPIFFS fájlrendszerébe.
 
 
 Ami talán ehhez a részhez tartozik:
