@@ -1,22 +1,27 @@
-# AsyncWebserver1.ino
-Aszinkron webszerver minta.
-
-[ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
-
-[Offline HTML oldalak használata](https://github.com/SanyiSay/ESP8266/tree/master/AsyncWebserver#htm-f%C3%A1jlok-tesztel%C3%A9se)
-
-[ESP AsyncFSBrowser ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)  (egy könnyed html alapú fájlkezelő)
-
-[ESP fájlrendszeréből is használja a webszerverünk a feltöltött oldalakat) ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)
+#ESPAsyncWebServer 
 
 
+- [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer) (Github)
+
+- [Offline HTML oldalak tesztelése](https://github.com/SanyiSay/ESP8266/tree/master/AsyncWebserver#htm-f%C3%A1jlok-tesztel%C3%A9se)  
+
+- [ESP AsyncFSBrowser ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)  (egy könnyed html alapú fájlkezelő)
+
+- [ESP fájlrendszeréből hogy éri el a webszerverünk a feltöltött oldalakat) ](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/README.md#esp-asyncfsbrowser)
 
 
+
+----
 ### Offline htm fájlok tesztelése 
 
-[SanyiSay HTML](https://github.com/SanyiSay/ESP8266/tree/master/HTML)
+**HTML minták hozzá**  [SanyiSay HTML](https://github.com/SanyiSay/ESP8266/tree/master/HTML) 
+alap_on_off_ajax.html
+offline_ajax.html
 
-Következő két kódrészlet a heap méretét adja vissza, ha a html oldal esp-n van tárolva onnan fut (online) akkor mindkét példa működik és megkapja a böngésző (kliens) a heap méretét. Viszont ha a HTML oldal (offline) akkor csak a második a ( /_heap ) oldal meghívására kapjuk meg a heap méretét mert ahhoz van hozzácsatolva a (Access-Control-Allow-Origin:*) fejléc.
+**ESP Arduino webszerver minta hozzá:**
+AsyncWebserver1.ino
+
+A következő két kódrészlet az AsyncWebserver1.ino mintából stármazikés a heap méretét adja vissza, ha a html oldal esp-n van tárolva onnan fut (online) akkor mindkét példa működik és megkapja a böngésző (kliens) a heap méretét. Viszont ha a HTML oldal (offline) akkor csak a második a ( /_heap ) oldal meghívására kapjuk meg a heap méretét mert ahhoz van hozzácsatolva a (Access-Control-Allow-Origin:*) fejléc.
 
     server.on("/heap", HTTP_GET, [](AsyncWebServerRequest *request) {
 		request->send(200, "text/plain", String(ESP.getFreeHeap()));
@@ -46,12 +51,19 @@ Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a
 ![Sikeres adatfogadás](https://github.com/SanyiSay/ESP8266/blob/master/DOC/origin_hiba.JPG?raw=true)
 
 ----------
+
 ----------
 
 # ESP AsyncFSBrowser
 
+Része az AsyncWebServer-nek
+
+**ESP Arduino webszerver minta hozzá:**
+AsyncWebserver1.ino
+
 **Meghívása:**
- /edit  esp oldalai között az edit oldalon találjuk.
+ xxx.xxx.xxx.xxx/edit  
+edit oldalon találjuk.
  
 Sokat nem lehet róla írni az oldal magáért beszél. 
 Fájl fel, letöltés, szerkesztés, létrehozás az esp SPIFFS fájlrendszerébe.
@@ -69,9 +81,14 @@ Ezt ezzel a sorral tehetjük meg. Itt még azt állítjuk be hogy ha az esp ip c
 
 Ezek után már könnyedén fel tudjuk tenni az offline megszerkesztett oldalainkat az esp-re.
 
+----------
 
 
+----------
+# OTA kódfeltöltés html oldalról.
+**ESP Arduino webszerver minta hozzá:**
+AsyncWebserver1.ino
 
+Arduino OTA-hoz hasonlóan wifin keresztül tölti fel a kódot az esp-re csak itt nem az arduino szerkesztőn hanem egy html oldalon keresztül tudjuk kiválasztani, és feltölteni a szükséges .bin fájlt. Így a frissítéshez nem kell a szerkesztő elég bármi amin egy böngésző fut.
  
-
-
+/update oldalon érjük el az oldalt
