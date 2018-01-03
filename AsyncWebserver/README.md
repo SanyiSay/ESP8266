@@ -102,7 +102,6 @@ Ezek után már könnyedén fel tudjuk tenni az offline megszerkesztett oldalain
 [AsyncWebserver1.ino](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/AsyncWebserver1.ino)
 
 **Kódunkban szükséges változtatások:**
-
 [Ezt a pár sort kell beilleszteni használatához.](https://github.com/SanyiSay/ESP8266/blob/master/AsyncWebserver/AsyncWebserver1.ino#L79-L112)
 
 Arduino OTA-hoz hasonlóan wifin keresztül tölti fel a kódot az esp-re csak itt nem az arduino szerkesztőn hanem egy html oldalon keresztül tudjuk kiválasztani, és feltölteni a szükséges .bin fájlt. Így a frissítéshez nem kell a szerkesztő elég bármi amin egy böngésző fut.
