@@ -1,4 +1,4 @@
-// két könyvtárt kell hozzá plusszba letöteni
+// két könyvtárt kell hozzá pluszba letöteni
 // https://github.com/me-no-dev/ESPAsyncWebServer
 // https://github.com/me-no-dev/ESPAsyncTCP
 
