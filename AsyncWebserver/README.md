@@ -107,4 +107,5 @@ Ezek után már könnyedén fel tudjuk tenni az offline megszerkesztett oldalain
 Arduino OTA-hoz hasonlóan wifin keresztül tölti fel a kódot az esp-re csak itt nem az arduino szerkesztőn hanem egy html oldalon keresztül tudjuk kiválasztani, és feltölteni a szükséges .bin fájlt. Így a frissítéshez nem kell a szerkesztő elég bármi amin egy böngésző fut.
  
 /update oldalon érjük el
+
 ![1](https://github.com/SanyiSay/ESP8266/blob/master/DOC/update.JPG?raw=true)
