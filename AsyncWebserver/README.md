@@ -70,8 +70,9 @@ Része az AsyncWebServer-nek
  xxx.xxx.xxx.xxx/edit  
 edit oldalon találjuk.
 
-**Kódunkban szükséges változtatások hozz.**
-Következő két sort kell beillesztenia  kódunkba.
+**Kódunkban szükséges változtatások:**
+
+Következő két sort kell beilleszteni.
 
       #include <SPIFFSEditor.h>
       server.addHandler(new SPIFFSEditor());
