@@ -56,6 +56,10 @@ Hibás fejlécnél viszont hiányzik és szép pirossal figyelmeztet is minket a
 
 # ESP AsyncFSBrowser
 
+![1](https://github.com/SanyiSay/ESP8266/blob/master/DOC/fsb.JPG?raw=true)
+![2](https://github.com/SanyiSay/ESP8266/blob/master/DOC/fsb2.JPG?raw=true)
+
+
 Része az AsyncWebServer-nek
 
 
@@ -65,7 +69,13 @@ Része az AsyncWebServer-nek
 **Meghívása:**
  xxx.xxx.xxx.xxx/edit  
 edit oldalon találjuk.
- 
+
+**Kódunkban szükséges változtatások hozz.**
+Következő két sort kell beillesztenia  kódunkba.
+
+      #include <SPIFFSEditor.h>
+      server.addHandler(new SPIFFSEditor());
+
 Sokat nem lehet róla írni az oldal magáért beszél. 
 Fájl fel, letöltés, szerkesztés, létrehozás az esp SPIFFS fájlrendszerébe.
 
