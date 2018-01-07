@@ -5,7 +5,7 @@
 
 **Minták leírásai**
 
-- [AsyncWebserver1.ino](https://github.com/SanyiSay/ESP8266/wiki/Async-Webserver)
+- [AsyncWebserver1.ino](https://github.com/SanyiSay/ESP8266/wiki/AsyncWebserver1.ino)  (SanyiSay Wiki)
 
 
 
