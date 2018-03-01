@@ -60,7 +60,7 @@ void setup() {
 	// heap kiírása
 	//***************************************************
 	server.on("/_heap", HTTP_GET, [](AsyncWebServerRequest *request) {
-		AsyncWebServerResponse *response = request->beginResponse(200, "text/html",String(ESP.getFreeHeap()));
+		AsyncWebServerResponse *response = request->beginResponse(200, "text/plain",String(ESP.getFreeHeap()));
 		response->addHeader("Access-Control-Allow-Origin", "*");
 		request->send(response);
 
