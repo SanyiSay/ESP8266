@@ -1,3 +1,4 @@
+
 // két könyvtárt kell hozzá pluszba letöteni
 // https://github.com/me-no-dev/ESPAsyncWebServer
 // https://github.com/me-no-dev/ESPAsyncTCP
@@ -8,14 +9,14 @@
 #include <ESPAsyncWebServer.h>
 #include <SPIFFSEditor.h>
 
-AsyncWebServer server(80); 
+AsyncWebServer server(80);
 
+#define STA_SSID "***********"
+#define STA_PASS  "**************"
 
-#define ssid "*****"
-#define password "********"
 
 // reboot kapcsoló HTTP OTA után
-bool shouldReboot =false;
+bool shouldReboot = false;
 
 void setup() {
 	// serial port on
@@ -23,12 +24,14 @@ void setup() {
 	Serial.println("\nSerial Debug ON");
 
 	// Wifi SAT ON
-	WiFi.mode(WIFI_STA);
-	WiFi.begin(ssid, password);
-	if (WiFi.waitForConnectResult() != WL_CONNECTED) {
-		WiFi.disconnect(false);
+	WiFi.setAutoReconnect(true);
+	WiFi.setAutoConnect(true);
+	WiFi.begin(STA_SSID, STA_PASS);
+
+	// Wait for connection
+	while (WiFi.status() != WL_CONNECTED) {
 		delay(500);
-		WiFi.begin(ssid, password);
+		Serial.print(".");
 	}
 
 	Serial.print("\n--- \n\n");
@@ -39,13 +42,11 @@ void setup() {
 	// fájlrendszer ON
 	SPIFFS.begin();
 
-
 	//***************************************************
 	// FS Editor ON
 	//***************************************************
 	server.addHandler(new SPIFFSEditor());
 
-	
 	//***************************************************
 	// heap kiírása
 	// Access-Control-Allow-Origin", "*"    nélkül
@@ -54,8 +55,6 @@ void setup() {
 		request->send(200, "text/plain", String(ESP.getFreeHeap()));
 	});
 
-	
-	
 	//***************************************************
 	// heap kiírása
 	//***************************************************
@@ -66,16 +65,39 @@ void setup() {
 
 	});
 
-	
-	
+	//***************************************************
+	// offline_ajax.html kérésére ad választ
+	//***************************************************
+	//"http://ESP.IP/oldal?adat=1&dadat2=2&adat3=3";
+	server.on("/oldal", HTTP_GET, [](AsyncWebServerRequest *request) {
+
+		Serial.print("\n---> /get oldal .. klienstől érkező adatok \n");
+		for (byte b=0; b<request->args(); b++) {
+			Serial.print (request->argName(b));
+			Serial.print (": ");
+			Serial.println (request->arg(b));
+		}
+		Serial.print("\n<--- \n\n");
+
+		Serial.print("\n---> /get oldal .. kliensnek válasz küldése \n");
+		Serial.print("\n<--- \n\n");
+
+		String s=String(request->args())+" db adat érkezett meg<BR>adat 1 + adat 2 = ";
+		int i=0;
+		s+=String(request->arg(i).toInt()+request->arg(1).toInt());
+
+		AsyncWebServerResponse *response = request->beginResponse(200, "text/html; charset=ISO-8859-2", s);
+		response->addHeader("Access-Control-Allow-Origin", "*");
+		request->send(response);
+
+	});
+
 	//***************************************************
 	// Fájlrendszerből is keressen html oldalakat
 	// kezdőoldal beállítása
 	//***************************************************
 	server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.htm");
 
-
-	
 	//***************************************************
 	// Simple Firmware Update Form
 	//***************************************************
